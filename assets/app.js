@@ -26,20 +26,16 @@ function scrollAnimation() {
         path.style.strokeDashoffset = pathLength - drawLength;
     }
 
-    switch (scrollPercentage) {
-        case 0:
-            mainTitle.style.opacity = 1;
-        case 1:
-            svgImg.style.opacity = 0;
-            colorImg.style.opacity = 1;
-            colorImg.style.transform = "scale(1)";
-            break;
-        default:
-            mainTitle.style.opacity = 0;
-            svgImg.style.opacity = 1;
-            colorImg.style.opacity = 0;
-            colorImg.style.transform = "scale(.9)";
-            break;
+    if (scrollPercentage === 0) {
+        mainTitle.style.opacity = 1;
+    } else if (scrollPercentage > 0.98) {
+        svgImg.style.opacity = 0;
+        colorImg.style.opacity = 1;
+        colorImg.style.transform = "scale(1)";
+    } else {
+        mainTitle.style.opacity = 0;
+        svgImg.style.opacity = 1;
+        colorImg.style.opacity = 0;
+        colorImg.style.transform = "scale(.9)";
     }
-
 }

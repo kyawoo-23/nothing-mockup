@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary: #999;
+    --secondary: #000;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.title {
+    font-family: 'Gugi', cursive;
+    font-size: 4rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+}
+
+.main-title {
+    width: 90%;
+    margin: auto;
+    color: var(--primary);
+    opacity: 0;
+    font-size: 6rem;
+    text-align: center;
+    transition: opacity .5s;
+}
+
+.section-title-1:first-child {
+    writing-mode: vertical-lr;
+    padding-left: 10%;
+}
+.section-title-1:last-child {
+    writing-mode: vertical-rl;
+    padding-right: 10%;
+}
+
+.section-title-2 {
+    text-align: center;
+}
+
+.svg-img {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .4s;
+}
+
+.svg-img path {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke: var(--secondary);
+    stroke-width: 16;
+    transition: stroke-dashoffset .2s;
+}
+
+.color-img {
+    object-fit: contain;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity .2s, transform 1s;
+}
+
+body > section, .wrapper section:nth-child(4) {
+    background-color: var(--secondary);
+}
+
+.wrapper {
+    position: relative;
+}
+
+.author {
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.author a {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    /* For mobiles: */
+    .main-title {
+        font-size: 3rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}
